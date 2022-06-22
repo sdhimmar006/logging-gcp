@@ -4,13 +4,15 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
-    <root level="INFO">
-        <appender name="STACKDRIVER" class="ch.qos.logback.core.ConsoleAppender">
-            <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
-            <layout class="org.springframework.cloud.gcp.logging.StackdriverJsonLayout">
-                <projectId>${projectId}</projectId>
-            </layout>
-            </encoder>
-        </appender>
-    </root>
+    <springProfile name="int">
+        <root level="INFO">
+            <appender name="STACKDRIVER" class="ch.qos.logback.core.ConsoleAppender">
+                <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+                <layout class="org.springframework.cloud.gcp.logging.StackdriverJsonLayout">
+                    <projectId>${projectId}</projectId>
+                </layout>
+                </encoder>
+            </appender>
+        </root>
+    </springProfile>
 </configuration>
