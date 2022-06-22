@@ -27,6 +27,7 @@ kind: Service
 metadata:
   name: loggging-gcp-service
 spec:
+  type: LoadBalancer
   selector:
     app: loggging-gcp
   ports:
