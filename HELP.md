@@ -26,6 +26,7 @@ kubectl apply -f ./deploy
 **Update an existing service**
 ```
 export VERSION="0.0.2"
-./gradlew test jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
+chmod +x gradlew
+./gradlew jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
 kubectl apply -f ./deploy
 ```

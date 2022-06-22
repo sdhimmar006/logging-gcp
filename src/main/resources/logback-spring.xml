@@ -5,7 +5,6 @@
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 
     <root level="INFO">
-        <!-- If running in GCP, remove the CONSOLE appender otherwise logs will be duplicated. -->
         <appender name="STACKDRIVER" class="ch.qos.logback.core.ConsoleAppender">
             <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="org.springframework.cloud.gcp.logging.StackdriverJsonLayout">
