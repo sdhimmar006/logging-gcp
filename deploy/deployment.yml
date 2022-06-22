@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loggging-gcp
+  labels:
+    app: loggging-gcp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loggging-gcp
+  template:
+    metadata:
+      labels:
+        app: loggging-gcp
+    spec:
+      containers:
+      - name: loggging-gcp-container
+        image: gcr.io/my-project/logging-gcp:0.0.1
+        ports:
+        - containerPort: 80
+# TODO: change here
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: loggging-gcp-service
+spec:
+  selector:
+    app: loggging-gcp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
