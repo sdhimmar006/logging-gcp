@@ -18,7 +18,7 @@ spec:
       - name: loggging-gcp-container
         image: gcr.io/my-project/logging-gcp:0.0.1
         ports:
-        - containerPort: 80
+        - containerPort: 8080
 # TODO: change here
 ---
 
@@ -31,5 +31,5 @@ spec:
     app: loggging-gcp
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8080
