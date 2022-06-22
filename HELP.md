@@ -20,7 +20,7 @@ git clone https://github.com/sdhimmar006/logging-gcp.git
 cd logging-gcp
 chmod +x gradlew
 export VERSION="0.0.1"
-./gradlew test jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
+./gradlew jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
 kubectl apply -f ./deploy
 ```
 **Update an existing service**
