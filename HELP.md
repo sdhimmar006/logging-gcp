@@ -21,12 +21,12 @@ cd logging-gcp
 chmod +x gradlew
 export VERSION="0.0.1"
 ./gradlew jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
-helm upgrade -i ./deploy --set project==${PROJECT_ID} version=${VERSION}
+helm upgrade -i logging-gcp deploy --set project=${PROJECT_ID} --set version=${VERSION}
 ```
 **Update an existing service**
 ```
 export VERSION="0.0.2"
 chmod +x gradlew
 ./gradlew jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
-kubectl apply -f ./deploy
+helm upgrade -i logging-gcp deploy --set project=${PROJECT_ID} --set version=${VERSION}
 ```
