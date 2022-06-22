@@ -14,13 +14,13 @@ import org.springframework.web.client.RestTemplate;
 public class TesyController {
 
     @GetMapping("/trail")
-    @SneakyThrows
     public ResponseEntity<String> getMsg(){
         log.error("error msg");        
         log.info("info msg");
         log.warn("warn msg");
         log.debug("debug msg");
         // log.fatal("fatal msg");
+        int x=5/0;
         return ResponseEntity.ok("From service1");
     }
 }

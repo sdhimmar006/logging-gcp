@@ -37,7 +37,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-gcp-starter-logging")
 }
 // TODO: change here
-jib.to.image='gcr.io/qwiklabs-gcp-01-ae0db20302c3/logging-gcp:0.0.3'
+jib.to.image="gcr.io/${PROJECT_ID}/logging-gcp:${VERSION}"
 
 tasks.named('test') {
 	useJUnitPlatform()
