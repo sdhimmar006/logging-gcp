@@ -15,11 +15,11 @@ spec:
         app: loggging-gcp
     spec:
       containers:
+      - name: loggging-gcp-container
+        image: gcr.io/{{ .Values.project }}/logging-gcp:{{ .Values.version }}
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: 'int'
-      - name: loggging-gcp-container
-        image: gcr.io/{{ .Values.project }}/logging-gcp:{{ .Values.version }}
         ports:
         - containerPort: 8080
 # TODO: change here
