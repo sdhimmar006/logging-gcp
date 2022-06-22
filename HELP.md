@@ -30,3 +30,7 @@ chmod +x gradlew
 ./gradlew jib -PPROJECT_ID=${PROJECT_ID} -PVERSION=${VERSION}
 helm upgrade -i logging-gcp deploy --set project=${PROJECT_ID} --set version=${VERSION}
 ```
+
+Local run
+
+.\gradlew bootRun -PPROJECT_ID=lss -PVERSION=p
