@@ -16,8 +16,11 @@ public class TesyController {
     @GetMapping("/trail")
     @SneakyThrows
     public ResponseEntity<String> getMsg(){
-        log.error("came to service1");        
-        log.info("going back from service1");
+        log.error("error msg");        
+        log.info("info msg");
+        log.warn("warn msg");
+        log.debug("debug msg");
+        log.fatal("fatal msg")
         return ResponseEntity.ok("From service1");
     }
 }
