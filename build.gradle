@@ -25,7 +25,7 @@ repositories {
 
 dependencyManagement {
 	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-gcp-dependencies:1.2.8.RELEASE"
+		mavenBom "com.google.cloud:spring-cloud-gcp-dependencies:3.2.1"
 	}
 }
 
@@ -34,7 +34,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation("org.springframework.cloud:spring-cloud-gcp-starter-logging")
+	implementation("com.google.cloud:spring-cloud-gcp-starter-logging")
 }
 // TODO: change here
 jib.to.image="gcr.io/${PROJECT_ID}/logging-gcp:${VERSION}"

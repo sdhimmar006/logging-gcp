@@ -20,7 +20,7 @@ public class TesyController {
         log.warn("warn msg");
         log.debug("debug msg");
         // log.fatal("fatal msg");
-        int x=5/0;
+        // int x=5/0;
         return ResponseEntity.ok("From service1");
     }
 }
